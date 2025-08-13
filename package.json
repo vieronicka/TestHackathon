@@ -1,0 +1,54 @@
+{
+  "name": "taskmaster-template",
+  "version": "1.0.0",
+  "description": "Simple Task Management System Template",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "npx node-dev src/server.js",
+    "start-dev": "npx nodemon src/server.js",
+    "start-prod": "node src/server.js",
+    "migrate": "npm run delete-db && npx knex migrate:latest",
+    "seed": "npx knex seed:run",
+    "delete-db": "del-cli main.sqlite3",
+    "test": "vitest",
+    "security-audit": "npm audit",
+    "security-fix": "npm audit fix",
+    "security-check": "npm audit --audit-level moderate"
+  },
+  "keywords": [
+    "task-management",
+    "template",
+    "nodejs",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bootstrap": "^5.3.3",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "del-cli": "^5.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^8.0.1",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "hpp": "^0.2.3",
+    "joi": "^17.12.2",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "nodemon": "^3.1.7",
+    "sqlite3": "^5.1.7",
+    "uuid": "^9.0.1",
+    "xss-clean": "^0.1.4"
+  },
+  "devDependencies": {
+    "jsdom": "^24.0.0",
+    "supertest": "^6.3.4",
+    "supertest-session": "^5.0.1",
+    "vitest": "^1.4.0"
+  }
+}
